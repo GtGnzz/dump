@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Website Saya</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: 'Kanit', sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow-y: auto; /* Menambahkan scroll vertikal */
+    height: auto;
+  }
+
+  .box {
+    width: 80%;
+    height: auto;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .box h2 {
+    color: #ffcc00; /* Warna #ffcc00 */
+  }
+
+  .box p {
+    color: #ccc;
+  }
+
+  .visit-btn {
+    background-color: #ff66b2;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    padding: 8px 50.3%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+  }
+
+  .atas {
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .atas h1 {
+    margin: 0 0 0 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #00e6ac; /* Warna #00e6ac */
+    font-size: 25px;
+  }
+
+  .menu {
+    padding: 10px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu a {
+    margin-right: 25px;
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ff9933; /* Warna #ff9933 */
+    padding: 5px;
+    width: 110px;
+    text-align: center;
+  }
+
+  #botom {
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    color: #00e6ac; /* Warna #00e6ac */
+  }
+</style>
+</head>
+<body>
+  
+<div class="container">
+  <div class="box">
+    <h2>ImaPost</h2>
+    <p>Post Your Image To Publish</p>
+    <button class="visit-btn" onclick="window.location.href='/fitur/ImaPost.html'">➠</button>
+  </div>
+  <div class="box">
+    <h2>Text To Image</h2>
+    <p>Buat Prompt Dan Generate Ke Gambar</p>
+    <button class="visit-btn" onclick="window.location.href='/fitur/TeksToImage.html'">➠</button>
+  </div>
+  <div class="box">
+    <h2>Video To Audio</h2>
+    <p>Convert Video Kamu Ke Audio</p>
+    <button class="visit-btn" onclick="window.location.href='/fitur/VideoToAudio.html'">➠</button>
+  </div>
+  <div class="box">
+    <h2>Chat Ai</h2>
+    <p>Chat Dengan AI</p>
+    <button class="visit-btn" onclick="window.location.href='/fitur/ai.html'">➠</button>
+  </div>
+  <div class="box">
+    <h2>Browser</h2>
+    <p>Browser Cepat Semua Search Engine</p>
+    <button class="visit-btn" onclick="window.location.href='/fitur/browser.html'">➠</button>
+  </div>
+</div>
+
+<div class="atas">
+  <h1>GTGNZZ PAGE</h1>
+</div>
+<header id="botom">
+  <div class="menu">
+      <a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+      <a href="com.html"><span class="glyphicon glyphicon-bullhorn"></span></a>
+      <a href="dev.html"><span class="glyphicon glyphicon-user"></span></a>
+      <a href="rate.html"><span class="glyphicon glyphicon-star"></span></a>
+      <a href="donate.html"><span class="glyphicon glyphicon-credit-card"></span></a>
+  </div>
+</header>
+<script src="script.js"></script>
+</body>
+</html>

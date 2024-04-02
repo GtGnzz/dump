@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Website Saya</title>
+    <link rel="stylesheet" href="styles.css">
+<title>Feedback Form</title>
+<style>
+    body {
+        background-color: #1a1a1a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        width: 490px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background-color: #222;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+        color: #f0ad4e;
+        text-align: center;
+    }
+
+    p {
+        color: #ccc;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        width: 20px;
+        height: auto;
+        background-color: transparent;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-right: 10px;
+        align-items: center;
+        font-size: 20px;
+        color: #f0ad4e;
+        text-align: center;
+    }
+
+    input[type="radio"]:checked + label {
+        color: white;
+    }
+
+    textarea {
+        width: 96%;
+        height: 100px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background-color: #444;
+        color: #ccc;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #f0ad4e;
+        color: #222;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #d9534f;
+    }
+
+    #notification {
+        color: #d9534f;
+        margin-top: 10px;
+    }
+            #botom {
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            color: #00e6ac;
+        }
+
+        .visit-btn {
+            background-color: #ff66b2;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            padding: 8px 50.3%;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            top: 9px;
+            right: 10px;
+        }
+
+        .menu {
+            padding: 10px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu a {
+            margin-right: 25px;
+            margin-left: 25px;
+            text-decoration: none;
+            color: #ff9933;
+            padding: 5px;
+            width: 110px;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Feedback Form</h2>
+    <div>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1">✭</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2">✭</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3">✭</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4">✭</label>
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5">✭</label>
+    </div>
+    <textarea id="feedbackText" placeholder="Tulis saran atau rekomendasi Anda"></textarea>
+    <button onclick="sendFeedback()">Kirim</button>
+    <p id="notification"></p>
+        <header id="botom">
+        <div class="menu">
+            <a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+            <a href="com.html"><span class="glyphicon glyphicon-bullhorn"></span></a>
+            <a href="dev.html"><span class="glyphicon glyphicon-user"></span></a>
+            <a href="rate.html"><span class="glyphicon glyphicon-star"></span></a>
+            <a href="donate.html"><span class="glyphicon glyphicon-credit-card"></span></a>
+        </div>
+    </header>
+</div>
+
+<script>
+    function sendFeedback() {
+        const rating = document.querySelector('input[name="rating"]:checked');
+        const feedbackText = document.getElementById('feedbackText').value;
+        const notification = document.getElementById('notification');
+
+        if (rating && feedbackText) {
+            const message = `Rate: ${getRatingMeaning(rating.value)} Bintang ${rating.value}\nDeskripsi: ${feedbackText}`;
+            // Kirim pesan ke nomor WhatsApp
+            window.location.href = `https://wa.me/6285795406671?text=${encodeURIComponent(message)}`;
+        } else {
+            notification.textContent = "Wajib Mengisi";
+        }
+    }
+
+    function getRatingMeaning(rating) {
+        switch (rating) {
+            case '1':
+                return 'Jelek';
+            case '2':
+                return 'Lumayan';
+            case '3':
+                return 'Bagus';
+            case '4':
+                return 'Bagus Banget';
+            case '5':
+                return 'Respect';
+            default:
+                return '';
+        }
+    }
+</script>
+</body>
+</html>

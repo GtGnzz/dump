@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informasi Pembayaran</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    .box h2 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 16px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #555;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .button:hover {
+        background-color: #777;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <img src="/img/dana.png" alt="Dana Logo" class="logo">
+        <h2>Informasi Dana</h2>
+        <p>Nomor Dana: 085725766522</p>
+        <p>Deskripsi: Aplikasi Dana</p>
+    </div>
+    <div class="box">
+        <img src="/img/gopay.png" alt="Gopay Logo" class="logo">
+        <h2>Informasi Gopay</h2>
+        <p>Nomor Gopay: 085795406671</p>
+        <p>Deskripsi: Aplikasi Gopay</p>
+    </div>
+    <div class="box">
+        <img src="/img/saweria.png" alt="Saweria Logo" class="logo">
+        <h2>Informasi Saweria</h2>
+        <p>Deskripsi: Platform Saweria</p>
+        <a class="button" href="https://saweria.co/GtGnzz" target="_blank">Buy a coffee</a>
+    </div>
+</div>
+</body>
+</html>
